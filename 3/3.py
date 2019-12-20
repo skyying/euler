@@ -1,35 +1,35 @@
 import math
-def prime_factor(n):
-    print(n)
 
-list = {}
+prime_list = {}
 
 def is_prime(n):
-    if n in list:
+    primes = [2, 3, 5, 7]
+
+    if n in prime_list:
         return True
-    if n == 2 or n == 3 or n == 5:
-        list[n] = True
-        return True
-    if n % 2 == 0 or n % 3 == 0 or n % 5 == 0:
-        return False
-    if n < 9:
-        list[n] = True
-        return True
-    i = 2
-    sr = math.sqrt(n)
-    while i < int(sr):
+
+    for p in primes:
+        if p == n:
+            prime_list[p] = True
+            return True
+        if n % p == 0:
+            return False
+
+    sr = int(math.sqrt(n)) + 1
+
+    for i in range(2, sr):
         if n % i == 0:
             return False
-        i += 1
-    list[n] = True
-    return True
 
-        
+    prime_list[n] = True
+
+    return True
 
 
 def prime_factor(n):
+
     m = n
-    prime = []
+    primes = []
     
     for i in range(2, n + 1):
         if is_prime(i):
@@ -44,15 +44,16 @@ def prime_factor(n):
                     m = int(t)
 
                 if m == 1:
-                    return max(prime)
+                    return max(primes)
 
                 if is_prime(m):
-                    prime.append(m)
+                    primes.append(m)
                     break
 
             if cur_prime != None:
-                prime.append(cur_prime)
+                primes.append(cur_prime)
                 cur_prime = None
-    return max(prime)
+
+    return max(primes)
     
 print(prime_factor(600851475143))
