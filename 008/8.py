@@ -1,5 +1,3 @@
-
-
 def get_digits():
     fp = open('./input.txt', "r")
     content = ""
