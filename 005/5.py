@@ -8,8 +8,9 @@ def convert_to_dict(cur_list):
         else:
             cur_dict[str(i)] = 1
     return cur_dict
-            
-# we compare those 2 list, 
+
+
+# we compare those 2 list,
 # A is the final factors we want for calculate real answer
 # B is the factors of certian number
 # e.g. A: {1: 1, 2: 2, 3: 1, 5: 1}, B{2: 1, 3: 1}
@@ -23,12 +24,14 @@ def compare_factors(final, current):
         if key not in final:
             final[key] = value
     return final
-            
+
+
 def get_product_from_all_factors(final):
     product = 1
     for key, value in final.items():
         product = product * (int(key) ** value)
     return product
+
 
 
 def get_smallest_multiple(n):

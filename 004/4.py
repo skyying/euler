@@ -16,11 +16,3 @@ def largest_palindrome_product():
 
 print(largest_palindrome_product())
 
-
-
-
-
-
-
-largest_palindrome_product()
-
