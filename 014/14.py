@@ -1,12 +1,5 @@
-import time
 
-# n → n/2 (n is even)
-# n → 3n + 1 (n is odd)
-
-# 13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1
-# Which starting number, under one million, produces the longest chain?
-
-" remember what has been calculate "
+# this takes about 4.x seconds to run
 
 produced = {}
 def produce_chain(n):
@@ -28,18 +21,12 @@ def produce_chain(n):
     produced[n] = step
     return step
 
-start = 1500
-
-# 1, 
-# 13, 10
-# 14, 18
-# 15, 18
-
-
 def start_calc():
     mm = 0
     step = 0
     n = 0
+
+    # produce_chain(n) = 1 + produce_chain(n/2) when n is even
     for i in range(500000, 1000000):
       step = produce_chain(i)
       if step > mm:
@@ -47,9 +34,7 @@ def start_calc():
         n = i
     return n
 
-start = time.time()
 print(start_calc())
-print(time.time() - start)
 
 
 
