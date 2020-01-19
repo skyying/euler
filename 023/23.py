@@ -1,10 +1,4 @@
-from collections import defaultdict
 import math
-import time
-from datetime import datetime
-
-# greate than 28123 is okay
-#n = 28123
 
 # this takes about 2 and half seconds to run
 
