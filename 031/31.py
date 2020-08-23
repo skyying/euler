@@ -2,15 +2,11 @@
 # this is the coin dp problem
 def coin_sums(n):
     coins = [1, 2, 5, 10, 20, 50, 100, 200]
-    # coins = [1, 2, 3]
     total = 200
-    combination = [[], []]
+    prev, cur = [], []
     for i in range(0, total + 1):
-        f, s = combination
-        f.append(1)
-        s.append(0)
-
-    prev, cur = combination
+        prev.append(1)
+        cur.append(0)
 
     for i in range(1, len(coins)):
         c = coins[i]
@@ -21,6 +17,5 @@ def coin_sums(n):
                 cur[j] = prev[j] + cur[j - c]
         prev, cur = cur, prev
     return prev[len(prev) - 1]
-
 
 print(coin_sums(200))
