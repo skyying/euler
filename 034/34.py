@@ -6,12 +6,7 @@ def prepare_boundary():
     for i in range(1, 10):
         f *= i
         fac[i] = f
-
-    boundary = 0
-    for val in fac.values():
-        boundary += val
-    return boundary
-
+    return sum(fac.values())
 
 def sum_of_curious():
     upper_bound = prepare_boundary()
